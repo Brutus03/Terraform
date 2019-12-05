@@ -1,0 +1,16 @@
+### Authentication details
+export TF_VAR_tenancy_ocid=ocid1.tenancy.oc1..aaaaaaaaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+export TF_VAR_user_ocid=ocid1.user.oc1..aaaaaaaaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+export TF_VAR_fingerprint=12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef
+export TF_VAR_private_key_path=/oci/oci_api_key.pem
+export TF_VAR_private_key_password=xxxxxxxx
+
+### Region
+export TF_VAR_region=ap-tokyo-1
+
+### Compartment
+export TF_VAR_compartment_ocid=ocid1.compartment.oc1..aaaaaaaaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+### Public/private keys used on the instance
+export TF_VAR_ssh_private_key=$(cat /oci/ssh/id_rsa)
+export TF_VAR_ssh_public_key=$(cat /oci/ssh/id_rsa.pub)
