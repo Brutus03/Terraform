@@ -62,37 +62,37 @@ resource "oci_core_security_list" "DB_securitylist" {
     }
   }
 
-  ## Security list Ope
-  resource "oci_core_security_list" "Ope_securitylist" {
-    display_name   = "開発環境_運用セグメント"
-    compartment_id = "${var.compartment_ocid}"
-    vcn_id         = "${oci_core_virtual_network.vcn2.id}"
+## Security list Ope
+resource "oci_core_security_list" "Ope_securitylist" {
+  display_name   = "開発環境_運用セグメント"
+  compartment_id = "${var.compartment_ocid}"
+  vcn_id         = "${oci_core_virtual_network.vcn2.id}"
 
-    ingress_security_rules {
-      source = "192.168.1.0/24"
-      protocol = "1"
-    }
+  ingress_security_rules {
+    source = "192.168.1.0/24"
+    protocol = "1"
+  }
 
-    ingress_security_rules {
-      source = "x.x.x.x/32"
-      protocol = "6"
-      tcp_options {
-        min = 22
-        max = 22
-      }
+  ingress_security_rules {
+    source = "x.x.x.x/32"
+    protocol = "6"
+    tcp_options {
+      min = 22
+      max = 22
     }
+  }
 
-    ingress_security_rules {
-      source = "192.168.1.0/24"
-      protocol = "6"
-      tcp_options {
-        min = 22
-        max = 22
-      }
+  ingress_security_rules {
+    source = "192.168.1.0/24"
+    protocol = "6"
+    tcp_options {
+      min = 22
+      max = 22
     }
+  }
 
-    egress_security_rules {
-      destination = "0.0.0.0/0"
-      protocol = "ALL"
-      }
+  egress_security_rules {
+    destination = "0.0.0.0/0"
+    protocol = "ALL"
     }
+  }
